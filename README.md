@@ -1,6 +1,8 @@
 # Full stack application with Angular frontend and Spring boot backend.
 
-Sample full stack application with Angular, TypeScript on frontend and Spring Boot backend communicating using REST services. Various features of Angular like routing, security, component, module, services, pipes have been implemented. File upload and display feature have been implemented intially. Other features can be extended as per requirement later.
+Sample full stack application with Angular, TypeScript on frontend and Spring Boot and Java 8+ backend communicating using REST services. Liquibase was used for database migration scripts.
+
+Various features of Angular like routing, security, component, module, services, pipes have been implemented. File upload and display feature have been implemented intially. Other features can be extended as per requirement later.
 
 ## Project Structure
 

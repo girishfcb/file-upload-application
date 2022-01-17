@@ -14,7 +14,7 @@ export class FileUploadComponent implements OnInit {
   fileName!: string | any;
   memberUploadFile!: File | any;
   memberErrorMap = new Map<string, string>();
-  allFileUploads!: FileContent[];
+  allFileUploads: FileContent[] = [];
 
   @ViewChild(NgForm, { static: true })
   memberFileUploadForm!: NgForm;

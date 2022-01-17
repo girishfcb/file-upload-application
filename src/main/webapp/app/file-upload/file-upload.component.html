@@ -1,0 +1,65 @@
+<div class="card">
+  <div class="card-header card-header-divider">Have some news to share?</div>
+
+  <div class="card-body">
+    <p>Now you can import any news in CSV format. Upload the CSV file below and we will post it as news.</p>
+    <form (ngSubmit)="onSubmit()" #memberFileUploadForm="ngForm" enctype="multipart/form-data" method="post">
+      <div class="form-group">
+        <label for="memberUploadFile"> Member Data File </label>
+
+        <input
+          id="memberUploadFile"
+          name="memberUploadFile"
+          type="file"
+          accept="text/csv"
+          class="form-control-file"
+          [required]="true"
+          (change)="onFileSelect($event)"
+          [(ngModel)]="fileName"
+        />
+      </div>
+
+      <div class="mt-4 text-right">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="memberFileUploadForm.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="card mt-3" *ngIf="allFileUploads.length > 0">
+  <div class="card-header card-header-divider">Uploaded Contents</div>
+  <div class="card-body">
+    <p>
+      Following news/blog content has already been imported
+      <strong> CSV </strong> file. You can download them for future reference.
+    </p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Uploader</th>
+          <th>Content</th>
+          <th>Date Uploaded</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allFileUploads">
+          <td>
+            {{ item.username }}
+          </td>
+
+          <td>
+            {{ item.content }}
+          </td>
+
+          <td>
+            {{ item.uploadDate | date }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-4 text-right">
+      <button (click)="downloadFile()" type="submit" class="btn btn-primary btn-lg">Download As CSV</button>
+    </div>
+  </div>
+</div>

@@ -27,7 +27,6 @@ export class FileUploadComponent implements OnInit {
 
   loadAllFileRecords(): void {
     this.fileUploadService.getAllFileRecords().subscribe(results => {
-      console.log(results);
       this.allFileUploads = results;
     });
   }
